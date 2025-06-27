@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Scanner dengan Text-to-Speech</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">🔍 QR Scanner Indonesia</h1>
+
+      <div id="status" class="status hidden"></div>
+
+      <div class="controls">
+        <button id="start-btn" class="btn">📷 Mulai Scan QR</button>
+        <button id="stop-btn" class="btn hidden">⏹️ Berhenti Scan</button>
+      </div>
+
+      <div class="scanner-container">
+        <div id="qr-reader"></div>
+      </div>
+
+      <div id="result-container" class="result-container">
+        <div class="result-title">📄 Hasil Scan QR:</div>
+        <div id="qr-result" class="result-text"></div>
+        <div class="controls">
+          <button id="speak-btn" class="btn">
+            <span class="speaker-icon">🔊</span> Baca Ulang
+          </button>
+          <button id="new-scan-btn" class="btn">🔄 Scan Baru</button>
+        </div>
+      </div>
+      <!-- testing -->
+
+      <!-- testing -->
+    </div>
+  </body>
+</html>
