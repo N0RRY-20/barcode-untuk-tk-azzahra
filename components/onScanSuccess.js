@@ -9,9 +9,9 @@ export const onScanSuccess = (decodedText, decodedResult) => {
   const hasil = data.find((item) => item.id === decodedText);
   if (hasil) {
     showStatus("QR Code berhasil di-scan!", "success");
-    setValue(decodedText);
+    setValue(`ananda ${hasil.nama} dari kelas ${hasil.kelas} sudah di jemput`);
     // qrresult tadinya decoded text
-    QRresult.textContent = QRvalue;
+    QRresult.textContent = `ananda ${hasil.nama} kelas ${hasil.kelas}`;
     // sementara isi qrvaluenya dulu dengan scan id saat ini dan amu di ganti dengan kalimat dan nama dari id
     // qrresult tadinya decoded text
     resultContainer.style.display = "block";
@@ -21,5 +21,7 @@ export const onScanSuccess = (decodedText, decodedResult) => {
     console.log(
       "peringatan : harus di tekan btn speak dulu biar warm up, ini kadang error dari chromenya sendiri"
     );
+  } else {
+    showStatus("hati hati data anak tidak terdaftar", "error");
   }
 };
