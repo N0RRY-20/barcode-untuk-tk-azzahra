@@ -10,3 +10,9 @@ export const showStatus = (message, type = "info") => {
     }, 5000);
   }
 };
+
+export const showStatusPersistent = (message, type = "info") => {
+  status.textContent = message;
+  status.className = `status ${type}`;
+  status.classList.remove("hidden");
+};

@@ -1,11 +1,25 @@
 import { QrScanner } from "./QrScanner.js";
 import { onScanSuccess } from "./onScanSuccess.js";
-import { showStatus } from "./showStatus.js";
+import { showStatus, showStatusPersistent } from "./showStatus.js";
+
+export let hasScanned = false;
+export let timeoutId = null;
+export const setHasScanned = (value) => {
+  hasScanned = value;
+};
 
 export const startScanner = (startBtn, stopBtn) => {
   showStatus("Meminta izin kamera...", "info");
+  hasScanned = false;
+
+  // Mulai timer 5 detik
+  timeoutId = setInterval(() => {
+    if (!hasScanned) {
+      showStatusPersistent("QR belum terdeteksi...", "info");
+    }
+  }, 10000);
   QrScanner.start(
-    { facingMode: "user" },
+    { facingMode: "environment" },
     {
       fps: 10,
       qrbox: { width: 250, height: 250 },

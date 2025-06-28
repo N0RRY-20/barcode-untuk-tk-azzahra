@@ -4,8 +4,11 @@ import { stopScanner } from "./stopScan.js";
 import { startBtn, stopBtn, QRresult, resultContainer } from "./dom.js";
 import { speak } from "./speak.js";
 import { data } from "./dataAnak.js";
+import { hasScanned, setHasScanned, timeoutId } from "./startScan.js";
 
 export const onScanSuccess = (decodedText, decodedResult) => {
+  setHasScanned(true);
+  clearInterval(timeoutId);
   const hasil = data.find((item) => item.id === decodedText);
   if (hasil) {
     showStatus("QR Code berhasil di-scan!", "success");
