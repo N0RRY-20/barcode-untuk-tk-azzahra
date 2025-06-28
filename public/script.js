@@ -35,30 +35,30 @@ speakBtn.addEventListener("click", () => {
   console.log("tombol aktif");
   speak();
 });
-const data = [
-  {
-    id: "12345",
-    nama: "rani nabilah",
-    kelas: "3A",
-  },
-  {
-    id: "67890",
-    nama: "Nadia Salsabila",
-    kelas: "4B",
-  },
-];
-const datamentah = 12345;
-const qrresult = datamentah.toString();
+// const data = [
+//   {
+//     id: "12345",
+//     nama: "rani nabilah",
+//     kelas: "3A",
+//   },
+//   {
+//     id: "67890",
+//     nama: "Nadia Salsabila",
+//     kelas: "4B",
+//   },
+// ];
+// const datamentah = 12345;
+// const qrresult = datamentah.toString();
 
-function cariDataById(data, qrresult) {
-  const hasil = data.find((item) => item.id === qrresult);
+// function cariDataById(data, qrresult) {
+//   const hasil = data.find((item) => item.id === qrresult);
 
-  if (hasil) {
-    console.log(`Data ${hasil.id} ditemukan dengan nama ${hasil.nama}`);
-  } else {
-    console.log(`Data dengan ID ${qrresult} tidak ditemukan`);
-  }
-}
-cariDataById(data, qrresult);
+//   if (hasil) {
+//     console.log(`Data ${hasil.id} ditemukan dengan nama ${hasil.nama}`);
+//   } else {
+//     console.log(`Data dengan ID ${qrresult} tidak ditemukan`);
+//   }
+// }
+// cariDataById(data, qrresult);
 
-// testing
+// // testing
