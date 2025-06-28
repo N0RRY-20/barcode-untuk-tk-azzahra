@@ -5,7 +5,7 @@ import { showStatus } from "./showStatus.js";
 export const startScanner = (startBtn, stopBtn) => {
   showStatus("Meminta izin kamera...", "info");
   QrScanner.start(
-    { facingMode: "user" },
+    { facingMode: "environment" },
     {
       fps: 10,
       qrbox: { width: 250, height: 250 },
